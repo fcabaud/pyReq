@@ -24,3 +24,15 @@ file a list of requirements + attribute and covered requirements
 - json2xlsx.py + a list of requirements can get back for this
 list of requirements the covered req and the correspondings attributes
 
+Installation and run in 3 commands 
+----------------------------------
+
+- install pdfminer (for pdf management)
+sudo apt-get install python-pdfminer
+
+- install openpyxl (for xlsx management)
+sudo apt-get install python-openpyxl
+
+- enjoy !
+python tests.py
+
