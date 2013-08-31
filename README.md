@@ -11,6 +11,28 @@ pyReq.py can be used for
    4. Sorting requirements
    5. Exporting requirements to testlink tool
 
+Installation and run in 4 commands 
+----------------------------------
+
+- install pdfminer (for pdf management):
+sudo apt-get install python-pdfminer
+
+- install openpyxl (for xlsx management):
+sudo apt-get install python-openpyxl
+
+- enjoy !
+cd scripts
+python tests.py
+
+Directories goal 
+----------------
+
+- doc: minimalist schema trying to explain how it works
+- in : input files (pdf), xlsx (input): your input(s)
+- out : result of an extraction : dont modify it
+- work: permanent requirements storage (like a database) in json format
+- scripts: python scripts (see doc in doc file)
+
 Details
 -------
 
@@ -23,16 +45,3 @@ file a list of requirements + attribute and covered requirements
 
 - json2xlsx.py + a list of requirements can get back for this
 list of requirements the covered req and the correspondings attributes
-
-Installation and run in 3 commands 
-----------------------------------
-
-- install pdfminer (for pdf management)
-sudo apt-get install python-pdfminer
-
-- install openpyxl (for xlsx management)
-sudo apt-get install python-openpyxl
-
-- enjoy !
-python tests.py
-
