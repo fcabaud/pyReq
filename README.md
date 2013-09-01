@@ -11,47 +11,42 @@ pyReq.py can be used for
    4. Sorting requirements
    5. Exporting requirements to testlink tool
 
-Installation and run 
---------------------
+Installation and run demo 
+-------------------------
 
 1. Linux Ubuntu
 
-- install pdfminer (for pdf management):
+  - install pdfminer (for pdf management):
 
-  **sudo apt-get install python-pdfminer**
+    **sudo apt-get install python-pdfminer**
 
-- install openpyxl (for xlsx management):
+  - install openpyxl (for xlsx management):
 
-  **sudo apt-get install python-openpyxl**
-<<<<<<< HEAD
+    **sudo apt-get install python-openpyxl**
 
-- enjoy !
+  - enjoy !
 
-  **cd scripts**
+    **cd scripts**
 
-  **python tests.py**
+    **python tests.py**
 
 2. Windows
 
-- install openpyxl
+  - install openpyxl
 
-  https://pypi.python.org/pypi/openpyxl  
+    https://pypi.python.org/pypi/openpyxl  
 
-  **c:\Python27\python.exe  setup.py install**
+    **c:\Python27\python.exe  setup.py install**
 
-- enjoy !
-=======
+  - enjoy !
 
-- enjoy !
+    **cd scripts**
 
-  **cd scripts**
+    **python tests.py**
 
-  **python tests.py**
->>>>>>> 3d144241e7ba7b6cf369ea24cd6e1025d39f62ba
+    **cd scripts**
 
-  **cd scripts**
-
-  **test.bat**
+    **test.bat**
   
 Directories goal 
 ----------------
