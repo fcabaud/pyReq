@@ -42,10 +42,6 @@ Installation and run demo
 
     **cd scripts**
 
-    **python tests.py**
-
-    **cd scripts**
-
     **test.bat**
   
 Directories goal 
