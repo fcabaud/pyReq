@@ -23,6 +23,7 @@ Installation and run
 - install openpyxl (for xlsx management):
 
   **sudo apt-get install python-openpyxl**
+<<<<<<< HEAD
 
 - enjoy !
 
@@ -39,6 +40,14 @@ Installation and run
   **c:\Python27\python.exe  setup.py install**
 
 - enjoy !
+=======
+
+- enjoy !
+
+  **cd scripts**
+
+  **python tests.py**
+>>>>>>> 3d144241e7ba7b6cf369ea24cd6e1025d39f62ba
 
   **cd scripts**
 
