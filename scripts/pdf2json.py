@@ -22,7 +22,7 @@ def serReqFromPdf(fileNameIn, regExp, fileNameOut):
   fp=open("../work/output.txt","r")
   data = fp.readlines()
   concatenatedData = "".join(data)
-  # 2) provide the concatened string to regexp
+  # 2) provide the concatened string to regexp  
   extract = re.findall(regExp, concatenatedData)
   # 3) write json file
   requirements = pyReq(fileNameOut)
