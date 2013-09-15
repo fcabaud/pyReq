@@ -32,6 +32,12 @@ Installation and run demo
 
 2. Windows
 
+  - install pdfminer
+
+    https://pypi.python.org/pypi/pdfminer/
+
+    **c:\python27\python.exe setup.py install**
+
   - install openpyxl
 
     https://pypi.python.org/pypi/openpyxl  
