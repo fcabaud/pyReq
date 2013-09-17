@@ -1,4 +1,4 @@
-#!/usr/RQT/env python
+#!/usr/bin/python
 # Requirement management stored in a Json file
 import json
 from collections import OrderedDict
@@ -21,8 +21,6 @@ C_PATH_WORK        = ".."+os.sep+"work"+os.sep  # path where json files are
 class error(BaseException):
   def __init__(self, data):
     self.data = data
-  def __getitem__(self):
-    return self.data
 
 
 # Requirements dictionnary
