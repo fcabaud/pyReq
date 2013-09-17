@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # Goal : to extract dictionnary in an xlsx file from a list of requirements
 from pyReq import *
 import argparse
@@ -13,8 +13,8 @@ class getXlsx(pyReq):
     fp = open(testlinkFileName, 'w')
     for tag in listOfReq:
       # "RQT_SPR_FonctionX_0001","RQT_SPR_FonctionX_0001","La fonctionX doit etre mise en place au dessus de 30 degres.",1,"F",1,1
-      print(tag)
-      print(self.reqDict[tag][C_KEY_BODY])
+      #print(tag)
+      #print(self.reqDict[tag][C_KEY_BODY])
       fp.write('"%s","%s","%s",1,"F",1,1\n'%(tag,tag,self.reqDict[tag][C_KEY_BODY]))
     fp.close()
     print("Write csv file %s"%testlinkFileName)
@@ -28,10 +28,10 @@ def test():
   for tag in listOfTagsSprint2:
     if getReqInstance[tag][C_KEY_COVERAGE] == []:
       print("%s Not covered"%tag)  
-  getReqInstance.getXlsx(listOfTagsSprint2, C_PATH_OUT+'reqListSprint2NotCovered.xlsx')  
+  getReqInstance.getXlsx(listOfTagsSprint2, C_PATH_OUT+'reqListSprint2NotCovered.csv')  
   # Example 2 : get all requirements covered by a KO test : what development team has to do
   listOfTagsSprint1 = getReqInstance.getListReqFromAttribute("attributeStatus", "KO")
-  getReqInstance.getXlsx(listOfTagsSprint1, C_PATH_OUT+'reqListStatusKO.xlsx')  
+  getReqInstance.getXlsx(listOfTagsSprint1, C_PATH_OUT+'reqListStatusKO.csv')  
     
 if __name__ == '__main__':
   #test()
