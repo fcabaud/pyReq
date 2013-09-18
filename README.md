@@ -58,15 +58,27 @@ Installation and run demo
 
   - install pdfminer
 
+     - 2.x version is here
+
     https://pypi.python.org/pypi/pdfminer/
 
-    **c:\python27\python.exe setup.py install**
+     - 3.x version is here
+
+    https://pypi.python.org/pypi/pdfminer3k
+
+    **c:\\python27\\python.exe setup.py install**
 
   - install openpyxl
 
     https://pypi.python.org/pypi/openpyxl  
 
-    **c:\Python27\python.exe  setup.py install**
+    **c:\\Python27\\python.exe  setup.py install**
+
+  - install setuptools
+
+   https://pypi.python.org/pypi/setuptools/
+
+   **c:\\Python27\\python.exe  setup.py install**
 
   - enjoy !
 
