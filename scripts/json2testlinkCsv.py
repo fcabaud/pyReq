@@ -3,8 +3,22 @@
 from pyReq import *
 import argparse
 
-class getXlsx(pyReq):
-  def getXlsx(self, listOfReq = [], testlinkFileName = 'getReq.csv'):
+class ReqGetXlsx(pyReq):
+  """ class for export of requirements in csv file for testlink tool 
+       the goal is to be able to enter req into testlink
+
+     :arg pyReq: json input requirements file 
+     :type pyReq: string
+  """
+  def get_testlink_csv(self, listOfReq = [], testlinkFileName = 'getReq.csv'):
+    """ Get testlink csv file 
+    
+       :arg listOfReq: list of requirements to be exported
+       :type listOfReq: string
+
+       :arg testlinkFileName: output file : csv file for testlink
+       :type testlinkFileName: string
+    """
     #dictReq = self.get(listOfReq)
     #print(listOfReq)
     if listOfReq == []:
@@ -20,7 +34,7 @@ class getXlsx(pyReq):
     print("Write csv file %s"%testlinkFileName)
 
 def test():
-  getReqInstance = getXlsx(C_PATH_WORK+"docExample.json")
+  getReqInstance = ReqGetXlsx(C_PATH_WORK+"docExample.json")
   #listOfTags = ['RQT_0001','RQT_0003']
   #print(getReqInstance.getKeys())
   # Example 1 : get all requirements not covered of sprint 2 : what validation team has to do
@@ -28,20 +42,20 @@ def test():
   for tag in listOfTagsSprint2:
     if getReqInstance[tag][C_KEY_COVERAGE] == []:
       print("%s Not covered"%tag)  
-  getReqInstance.getXlsx(listOfTagsSprint2, C_PATH_OUT+'reqListSprint2NotCovered.csv')  
+  getReqInstance.get_testlink_csv(listOfTagsSprint2, C_PATH_OUT+'reqListSprint2NotCovered.csv')  
   # Example 2 : get all requirements covered by a KO test : what development team has to do
   listOfTagsSprint1 = getReqInstance.getListReqFromAttribute("attributeStatus", "KO")
-  getReqInstance.getXlsx(listOfTagsSprint1, C_PATH_OUT+'reqListStatusKO.csv')  
+  getReqInstance.get_testlink_csv(listOfTagsSprint1, C_PATH_OUT+'reqListStatusKO.csv')  
     
 if __name__ == '__main__':
   #test()
-  parser = argparse.ArgumentParser(description='json2xlsx ..\work\docExample.json ..\out\testlinkInput.csv')
+  parser = argparse.ArgumentParser(description='json2testlinkCsv ..\work\docExample.json ..\out\testlinkInput.csv')
   parser.add_argument('jsonFileInput', action="store")
   parser.add_argument('testlinkcsvFileOutput', action="store")
   result = parser.parse_args()
   arguments = dict(result._get_kwargs())  
   #print(arguments['xlsxFileInput'])
   #print(arguments['jsonFileOutput'])
-  getReqInstance = getXlsx(arguments['jsonFileInput'])
+  getReqInstance = ReqGetXlsx(arguments['jsonFileInput'])
   #listOfTagsSprint1 = getReqInstance.getListReqFromAttribute("attributeStatus", "KO")
-  getReqInstance.getXlsx([], arguments['testlinkcsvFileOutput'])  
+  getReqInstance.get_testlink_csv([], arguments['testlinkcsvFileOutput'])  
