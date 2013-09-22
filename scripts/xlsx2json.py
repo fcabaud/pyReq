@@ -82,7 +82,7 @@ def test():
         
 if __name__ == '__main__':
   #test()
-  parser = argparse.ArgumentParser(description='xlsx2json ..\in\reqListCoverage.xlsx ..\work\docExample.json')
+  parser = argparse.ArgumentParser(description='xlsx2json %sreqListCoverage.xlsx %sdocExample.json'%(C_PATH_IN, C_PATH_WORK))
   parser.add_argument('xlsxFileInput', action="store")
   parser.add_argument('jsonFile', action="store")
   result = parser.parse_args()
