@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Requirement management stored in a Json file
+# Goal: Requirement management stored in a Json file
 import json
 from collections import OrderedDict
 import os
@@ -12,20 +12,21 @@ C_KEY_BODY         = "body"          # simple (and clear) sentence contaning the
 C_KEY_COVERAGE     = "coverage"      # list of othre requirements covered by requirement "tag"
 C_KEY_ATTRIBUTES   = "attribute"     # open list of attributes (example of attributes: Sprint : sprint when the tag is planned to be developped)
 
-C_PATH_IN          = '..'+os.sep+'in'+os.sep    # path where input doc are (docExample.pdf can be here)
-C_PATH_OUT         = '..'+os.sep+'out'+os.sep   # path where ouput doc are (coverage.xlsx can be generated here)
-C_PATH_WORK        = ".."+os.sep+"work"+os.sep  # path where json files are
+C_PATH_IN          = os.pardir+os.sep+'in'+os.sep    # path where input doc are (docExample.pdf can be here)
+C_PATH_OUT         = os.pardir+os.sep+'out'+os.sep   # path where ouput doc are (coverage.xlsx can be generated here)
+C_PATH_WORK        = os.pardir+os.sep+"work"+os.sep  # path where json files are
 
-
-# Error management
 class error(BaseException):
+  """ class for Error management for pyReq 
+        but also for inheritance classes
+  """
   def __init__(self, data):
     self.data = data
 
-
-# Requirements dictionnary
-# Dont use directly this class, but use it via pyReq class
 class reqDict:
+  """ class for requirements management 
+        Dont use directly this class, but use it via inheritance
+  """
   def __init__(self):
     self.reqDict = {}
   # key and body are mandatories
