@@ -1,20 +1,22 @@
-#!/usr/bin/env python
-# Goal : to extract dictionnary in an xlsx file from a list of requirements
+#!/usr/bin/python
+# Goal : Add to a list of existing requirements: 
+#               a coverage and attributes 
 import os
 from pyReq import *
 from openpyxl import load_workbook
 import argparse
 
-class setXlsx(pyReq):
-  # 3 fields are mandatories : tag, body and document name
-  def checkMandatoriesFieldNames(self, line1Names):
-    if C_KEY_TAG not in line1Names: 
-      raise error(" %s not found in first line of xls file"%C_KEY_TAG)
-    if C_KEY_BODY not in line1Names: 
-      raise error(" %s not found in first line of xls file"%C_KEY_BODY)
-    if C_KEY_DOCUMENT not in line1Names: 
-      raise error(" %s not found in first line of xls file"%C_KEY_DOCUMENT)
-  def setXlsx(self, excelName = 'setReq.xlsx'):
+class ReqCoverageAttributes(pyReq):
+  """ class for management of requirements coverages and attributes 
+     :arg json file: input and output requirements file 
+     :type json filen: string
+  """
+  def set_xlsx(self, excelName = 'setReq.xlsx'):
+    """ provides xlsx file excelName containing coverage and attributes
+    
+       :arg excelName: xlsx file containing coverage and attributes
+       :type excelName: string
+    """
     print(excelName)
     wb = load_workbook(excelName)
     ws = wb.get_active_sheet()
@@ -26,7 +28,7 @@ class setXlsx(pyReq):
         line1Names[ws.cell(row = 0, column = item).value] = item
     #print(line1Names)
     # Check mandatories fields
-    self.checkMandatoriesFieldNames(line1Names)    
+    self.check_mandatories_field_names(line1Names)    
     # Get attributes names
     attributesListName=[]
     #print(ws.get_highest_column())
@@ -60,22 +62,33 @@ class setXlsx(pyReq):
 
         # write in internal structure
         self.add(tag, document, body, coverage, attributesDict)
+  #
+  def check_mandatories_field_names(self, line1Names):
+    """ Check 3 fields are mandatories : tag, body and document name
+      an error is raised if one field is missing 
+    """
+    if C_KEY_TAG not in line1Names: 
+      raise error(" %s not found in first line of xls file"%C_KEY_TAG)
+    if C_KEY_BODY not in line1Names: 
+      raise error(" %s not found in first line of xls file"%C_KEY_BODY)
+    if C_KEY_DOCUMENT not in line1Names: 
+      raise error(" %s not found in first line of xls file"%C_KEY_DOCUMENT)
 
 def test():        
-  getReqInstance = setXlsx(C_PATH_WORK+"docExample.json")
-  getReqInstance.setXlsx(C_PATH_IN+'reqListCoverage.xlsx')  
-  getReqInstance.setXlsx(C_PATH_IN+'reqListSprints.xlsx')  
-  getReqInstance.setXlsx(C_PATH_IN+'reqListSprints_OnlyStatus.xlsx')  
+  getReqInstance = ReqCoverageAttributes(C_PATH_WORK+"docExample.json")
+  getReqInstance.set_xlsx(C_PATH_IN+'reqListCoverage.xlsx')  
+  getReqInstance.set_xlsx(C_PATH_IN+'reqListSprints.xlsx')  
+  getReqInstance.set_xlsx(C_PATH_IN+'reqListSprints_OnlyStatus.xlsx')  
         
 if __name__ == '__main__':
   #test()
   parser = argparse.ArgumentParser(description='xlsx2json ..\in\reqListCoverage.xlsx ..\work\docExample.json')
   parser.add_argument('xlsxFileInput', action="store")
-  parser.add_argument('jsonFileOutput', action="store")
+  parser.add_argument('jsonFile', action="store")
   result = parser.parse_args()
   arguments = dict(result._get_kwargs())  
   #print(arguments['xlsxFileInput'])
-  #print(arguments['jsonFileOutput'])
-  getReqInstance = setXlsx(arguments['jsonFileOutput'])
-  getReqInstance.setXlsx(arguments['xlsxFileInput'])  
+  #print(arguments['jsonFile'])
+  getReqInstance = ReqCoverageAttributes(arguments['jsonFile'])
+  getReqInstance.set_xlsx(arguments['xlsxFileInput'])  
   
