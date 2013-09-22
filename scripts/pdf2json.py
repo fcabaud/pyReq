@@ -14,7 +14,7 @@ import sys
 import re
 import argparse
 
-def serReqFromPdf(fileNameIn, regExp, fileNameOut):
+def get_req_from_pdf(fileNameIn, regExp, fileNameOut):
   """ transform pdf file fileNameIn in requirements 
        in json file fileNameOut via reg exp regExp
   
@@ -48,8 +48,8 @@ def serReqFromPdf(fileNameIn, regExp, fileNameOut):
   fp.close()
 
 def test():
-  serReqFromPdf("../in/docExample.pdf" , '(RQT_[0-9]{4})(.*)', "../work/docExample.json")
-  serReqFromPdf("../in/docExample2.pdf", '(RQT_[0-9]{4})(.*)', "../work/docExample.json")
+  get_req_from_pdf("../in/docExample.pdf" , '(RQT_[0-9]{4})(.*)', "../work/docExample.json")
+  get_req_from_pdf("../in/docExample2.pdf", '(RQT_[0-9]{4})(.*)', "../work/docExample.json")
   
 if __name__ == '__main__': 
   #test()
@@ -59,4 +59,4 @@ if __name__ == '__main__':
   parser.add_argument('jsonFileOutput', action="store")
   result = parser.parse_args()
   arguments = dict(result._get_kwargs())  
-  serReqFromPdf(arguments['pdfFileInput'], arguments['regularExpression'], arguments['jsonFileOutput'])
+  get_req_from_pdf(arguments['pdfFileInput'], arguments['regularExpression'], arguments['jsonFileOutput'])
