@@ -53,7 +53,7 @@ def test():
   
 if __name__ == '__main__': 
   #test()
-  parser = argparse.ArgumentParser(description="pdf2json ../in/docExample.pdf r'(RQT_[0-9]{4})(.*)' ../work/docExample.json")
+  parser = argparse.ArgumentParser(description="pdf2json %sdocExample.pdf r'(RQT_[0-9]{4})(.*)' %sdocExample.json"%(C_PATH_IN, C_PATH_WORK))
   parser.add_argument('pdfFileInput', action="store")
   parser.add_argument('regularExpression', action="store")
   parser.add_argument('jsonFileOutput', action="store")
