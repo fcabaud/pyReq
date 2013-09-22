@@ -49,7 +49,7 @@ def test():
     
 if __name__ == '__main__':
   #test()
-  parser = argparse.ArgumentParser(description='json2testlinkCsv ..\work\docExample.json ..\out\testlinkInput.csv')
+  parser = argparse.ArgumentParser(description='json2testlinkCsv %s\docExample.json %s\testlinkInput.csv'%(C_PATH_WORK, C_PATH_OUT))
   parser.add_argument('jsonFileInput', action="store")
   parser.add_argument('testlinkcsvFileOutput', action="store")
   result = parser.parse_args()
