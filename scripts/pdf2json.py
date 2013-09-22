@@ -15,6 +15,18 @@ import re
 import argparse
 
 def serReqFromPdf(fileNameIn, regExp, fileNameOut):
+  """ transform pdf file fileNameIn in requirements 
+       in json file fileNameOut via reg exp regExp
+  
+     :arg fileNameIn: pdf file containing requirements
+     :type fileNameIn: string
+
+     :arg regExp: regular expression
+     :type regExp: string
+
+     :arg fileNameOut: Json file
+     :type fileNameOut: string
+  """
   print("Extract : %s"%fileNameIn)
   pdf2txt.main(["-A", "-o", "../work/output.txt", fileNameIn])
 
@@ -22,12 +34,15 @@ def serReqFromPdf(fileNameIn, regExp, fileNameOut):
   fp=open("../work/output.txt","r")
   data = fp.readlines()
   concatenatedData = "".join(data)
+  #
   # 2) provide the concatened string to regexp  
   extract = re.findall(regExp, concatenatedData)
+  #
   # 3) write json file
   requirements = pyReq(fileNameOut)
   for item in extract:
     requirements.add(item[0], fileNameIn, item[1])
+  #
   # 4) Free resources
   del(requirements)
   fp.close()
