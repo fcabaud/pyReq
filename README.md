@@ -7,31 +7,32 @@ Purpose
 pyReq.py can be used for :
    1. **Parsing requirements via regexp from pdf files**
 
-    pdf2json.py ../in/docExample.pdf (RQT_[0-9]{4})(.*) ../work/docExample.json
+    ./pdf2json.py ../in/docExample.pdf "(RQT_[0-9]{4})(.*)" ../work/docExample.json
+
 
     will extract requirements of docExample.pdf via a regular expression in docExample.json
 
    2. **Adding attributes to requirements (TargetMilestone, Maturity)**
 
-     xlsx2json.py ../in/reqListSprints.xlsx ../work/docExample.json
+     ./xlsx2json.py ../in/reqListSprints.xlsx ../work/docExample.json
 
      will add attributes of requirements from reqListSprints.xlsx to docExample.json
 
    3. **Traceability from requirement to others requirements (ex: testcase)**
 
-     xlsx2json.py ../in/reqListCoverage.xlsx ../work/docExample.json
+     ./xlsx2json.py ../in/reqListCoverage.xlsx ../work/docExample.json
 
      will provides traceability between requirements from reqListCoverage.xlsx to docExample.json
 
    4. **Sorting requirements**
 
-     json2xlsx.py ../work/docExample.json ../out/reqListStatusKO.xlsx
+     ./json2xlsx.py ../work/docExample.json ../out/reqListStatusKO.xlsx
 
      will extract requirements which have tests failed from docExample.json to reqListStatusKO.xlsx
 
    5. **Exporting requirements to testlink tool**
 
-     json2xlsx ../work/docExample.json ../out/testlinkInput.csv
+     ./json2xlsx.py ../work/docExample.json ../out/testlinkInput.csv
 
      will export a testlink csv file from docExample.json
 
