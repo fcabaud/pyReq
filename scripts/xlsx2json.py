@@ -19,13 +19,15 @@ class ReqCoverageAttributes(pyReq):
     """
     print(excelName)
     wb = load_workbook(excelName)
-    ws = wb.get_active_sheet()
+    #ws = wb.get_active_sheet()
+    ws = wb.active
     # 1) Get the column number from the name and check mandatories name
     line1Names = {}
-    for item in range(ws.get_highest_column()):
-      if ws.cell(row = 0, column = item).value != None:
+    #for item in range(ws.get_highest_column()):
+    for item in range(ws.max_column): 
+      if ws.cell(row = 1, column = item).value != None:
         #print(ws.cell(row = 0, column = item).value)
-        line1Names[ws.cell(row = 0, column = item).value] = item
+        line1Names[ws.cell(row = 1, column = item).value] = item
     #print(line1Names)
     # Check mandatories fields
     self.check_mandatories_field_names(excelName, line1Names)    
@@ -38,7 +40,6 @@ class ReqCoverageAttributes(pyReq):
         attributesListName.append(item)
     #print(attributesListName)
     # 2) Import data
-    input("fred2")
     for line in range(ws.get_highest_row()):
       if line > 0:
         # 2.1) Get tag field
