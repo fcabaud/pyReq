@@ -23,18 +23,18 @@ class ReqGetXlsx(pyReq):
     #print("Request list  %s",";".join(set(listOfReq)))
     self.raiseOnNotFoundRequirement(listOfReq)    
     wb = Workbook()
-    ws = wb.get_active_sheet()
+    ws = wb.active
     ws.title = "Requirements"
 
     #  from the first cell. Rows and columns are zero indexed.
-    line = 1
-    col = 0
+    line = 2
+    #col = 0
 
-    ws.cell(row = 0, column = 0).value = C_KEY_TAG
-    ws.cell(row = 0, column = 1).value = C_KEY_BODY
-    ws.cell(row = 0, column = 2).value = C_KEY_DOCUMENT
-    ws.cell(row = 0, column = 3).value = C_KEY_COVERAGE
-    #ws.cell(row = 0, column = 4).value = C_KEY_ATTRIBUTES
+    ws.cell(row = 1, column = 1).value = C_KEY_TAG
+    ws.cell(row = 1, column = 2).value = C_KEY_BODY
+    ws.cell(row = 1, column = 3).value = C_KEY_DOCUMENT
+    ws.cell(row = 1, column = 4).value = C_KEY_COVERAGE
+    #ws.cell(row = 1, column = 5).value = C_KEY_ATTRIBUTES
     # Get all attributes name for all tags
     attributesDict={}
     nb=0
@@ -43,20 +43,20 @@ class ReqGetXlsx(pyReq):
         if attribute not in attributesDict:
           attributesDict[attribute] = nb
           # in line 0, write attribute name
-          ws.cell(row = 0, column = 4 + nb).value = attribute
+          ws.cell(row = 1, column = 5 + nb).value = attribute
           nb = nb + 1
 
     # Iterate over the data and write it out row by row.
     #print(self.reqDict.keys())
     for tag in listOfReq:
       #print(self.reqDict[tag])
-      ws.cell(row = line, column = 0).value = tag
-      ws.cell(row = line, column = 1).value = self.reqDict[tag][C_KEY_BODY]
-      ws.cell(row = line, column = 2).value = self.reqDict[tag][C_KEY_DOCUMENT]
-      ws.cell(row = line, column = 3).value = ";".join(self.reqDict[tag][C_KEY_COVERAGE])
-      #ws.cell(row = line, column = 4).value = ";".join(self.reqDict[tag][C_KEY_ATTRIBUTES])
+      ws.cell(row = line, column = 1).value = tag
+      ws.cell(row = line, column = 2).value = self.reqDict[tag][C_KEY_BODY]
+      ws.cell(row = line, column = 3).value = self.reqDict[tag][C_KEY_DOCUMENT]
+      ws.cell(row = line, column = 4).value = ";".join(self.reqDict[tag][C_KEY_COVERAGE])
+      #ws.cell(row = line, column = 5).value = ";".join(self.reqDict[tag][C_KEY_ATTRIBUTES])
       for attribute in self.reqDict[tag][C_KEY_ATTRIBUTES].keys():
-        ws.cell(row = line, column = 4+attributesDict[attribute]).value = self.reqDict[tag][C_KEY_ATTRIBUTES][attribute]
+        ws.cell(row = line, column = 5+attributesDict[attribute]).value = self.reqDict[tag][C_KEY_ATTRIBUTES][attribute]
       line += 1
 
     wb.save(excelName)
