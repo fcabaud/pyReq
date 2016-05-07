@@ -40,8 +40,8 @@ class ReqCoverageAttributes(pyReq):
         attributesListName.append(item)
     #print(attributesListName)
     # 2) Import data
-    for line in range(ws.get_highest_row()):
-      if line > 0:
+    for line in range(ws.max_row):
+      if line > 1:
         # 2.1) Get tag field
         tag      = ws.cell(row = line, column = line1Names[C_KEY_TAG]).value
         # 2.2) Get body
