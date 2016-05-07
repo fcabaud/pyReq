@@ -28,7 +28,7 @@ class ReqCoverageAttributes(pyReq):
         line1Names[ws.cell(row = 0, column = item).value] = item
     #print(line1Names)
     # Check mandatories fields
-    self.check_mandatories_field_names(line1Names)    
+    self.check_mandatories_field_names(excelName, line1Names)    
     # Get attributes names
     attributesListName=[]
     #print(ws.get_highest_column())
@@ -38,6 +38,7 @@ class ReqCoverageAttributes(pyReq):
         attributesListName.append(item)
     #print(attributesListName)
     # 2) Import data
+    input("fred2")
     for line in range(ws.get_highest_row()):
       if line > 0:
         # 2.1) Get tag field
@@ -63,16 +64,19 @@ class ReqCoverageAttributes(pyReq):
         # write in internal structure
         self.add(tag, document, body, coverage, attributesDict)
   #
-  def check_mandatories_field_names(self, line1Names):
+  def check_mandatories_field_names(self, excelName, line1Names):
     """ Check 3 fields are mandatories : tag, body and document name
       an error is raised if one field is missing 
     """
     if C_KEY_TAG not in line1Names: 
-      raise error(" %s not found in first line of xls file"%C_KEY_TAG)
+      err = " '%s' not found in first line of %s"%(C_KEY_TAG, excelName)
+      raise error(err)
     if C_KEY_BODY not in line1Names: 
-      raise error(" %s not found in first line of xls file"%C_KEY_BODY)
+      err = " '%s' not found in first line of %s"%(C_KEY_BODY, excelName)
+      raise error(err)
     if C_KEY_DOCUMENT not in line1Names: 
-      raise error(" %s not found in first line of xls file"%C_KEY_DOCUMENT)
+      err = " '%s' not found in first line of %s"%(C_KEY_DOCUMENT, excelName)
+      raise error(err)
 
 def test():        
   getReqInstance = ReqCoverageAttributes(C_PATH_WORK+"docExample.json")
