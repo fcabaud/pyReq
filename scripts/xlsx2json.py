@@ -25,9 +25,9 @@ class ReqCoverageAttributes(pyReq):
     line1Names = {}
     #for item in range(ws.get_highest_column()):
     for item in range(ws.max_column): 
-      if ws.cell(row = 1, column = item).value != None:
-        #print(ws.cell(row = 0, column = item).value)
-        line1Names[ws.cell(row = 1, column = item).value] = item
+      if ws.cell(row = 1, column = item+1).value != None:
+        #print(ws.cell(row = 0, column = item+1).value)
+        line1Names[ws.cell(row = 1, column = item+1).value] = item+1
     #print(line1Names)
     # Check mandatories fields
     self.check_mandatories_field_names(excelName, line1Names)    
