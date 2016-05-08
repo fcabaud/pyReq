@@ -59,3 +59,4 @@ if __name__ == '__main__':
   getReqInstance = ReqGetXlsx(arguments['jsonFileInput'])
   #listOfTagsSprint1 = getReqInstance.getListReqFromAttribute("attributeStatus", "KO")
   getReqInstance.get_testlink_csv([], arguments['testlinkcsvFileOutput'])  
+  del(getReqInstance)
