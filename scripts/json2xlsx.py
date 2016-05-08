@@ -88,3 +88,4 @@ if __name__ == '__main__':
   getReqInstance = ReqGetXlsx(arguments['jsonFileInput'])
   listOfTagsSprint1 = getReqInstance.getListReqFromAttribute("attributeStatus", "KO")
   getReqInstance.get_xlsx(listOfTagsSprint1, arguments['xlsxFileOutput'])  
+  del(getReqInstance)
