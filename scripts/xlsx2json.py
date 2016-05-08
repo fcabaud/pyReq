@@ -96,4 +96,5 @@ if __name__ == '__main__':
   #print(arguments['jsonFile'])
   getReqInstance = ReqCoverageAttributes(arguments['jsonFile'])
   getReqInstance.set_xlsx(arguments['xlsxFileInput'])  
+  del(getReqInstance)
   
