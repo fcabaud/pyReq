@@ -1,15 +1,59 @@
 pyReq management of requirements in python language
 ===================================================
 
-git clone https://github.com/jaepil/pdfminer3k.git
-
-git clone https://github.com/fcabaud/pyReq.git
-
-sudo pip3 install openpyxl
-
-cd pyReq 
 
 Purpose
+-------
+
+EXTRACTION of REQUIREMENTS from WORD DOCUMENTS
+See examples after Installation and run demo chapter
+
+Installation and run demo 
+-------------------------
+
+1. Linux Ubuntu
+
+    - git clone https://github.com/jaepil/pdfminer3k.git
+
+    - git clone https://github.com/fcabaud/pyReq.git
+
+    - sudo pip3 install openpyxl
+
+    - cd pyReq 
+
+2. Windows : NOT TESTED !!
+
+  - install pdfminer
+
+     - 2.x version is here
+
+    https://pypi.python.org/pypi/pdfminer/
+
+     - 3.x version is here
+
+    https://pypi.python.org/pypi/pdfminer3k
+
+    **c:\\python27\\python.exe setup.py install**
+
+  - install openpyxl
+
+    https://pypi.python.org/pypi/openpyxl  
+
+    **c:\\Python27\\python.exe  setup.py install**
+
+  - install setuptools
+
+   https://pypi.python.org/pypi/setuptools/
+
+   **c:\\Python27\\python.exe  setup.py install**
+
+  - enjoy !
+
+    **cd scripts**
+
+    **test.bat**
+
+Examples
 -------
 
 pyReq.py can be used for :
@@ -43,57 +87,6 @@ pyReq.py can be used for :
      python3 ./json2xlsx.py ../work/docExample.json ../out/testlinkInput.csv
 
      will export a testlink csv file from docExample.json
-
-Installation and run demo 
--------------------------
-
-1. Linux Ubuntu
-
-  - install pdfminer (for pdf management):
-
-    **sudo apt-get install python-pdfminer**
-
-  - install openpyxl (for xlsx management):
-
-    **sudo apt-get install python-openpyxl**
-
-  - enjoy !
-
-    **cd scripts**
-
-    **python tests.py**
-
-2. Windows
-
-  - install pdfminer
-
-     - 2.x version is here
-
-    https://pypi.python.org/pypi/pdfminer/
-
-     - 3.x version is here
-
-    https://pypi.python.org/pypi/pdfminer3k
-
-    **c:\\python27\\python.exe setup.py install**
-
-  - install openpyxl
-
-    https://pypi.python.org/pypi/openpyxl  
-
-    **c:\\Python27\\python.exe  setup.py install**
-
-  - install setuptools
-
-   https://pypi.python.org/pypi/setuptools/
-
-   **c:\\Python27\\python.exe  setup.py install**
-
-  - enjoy !
-
-    **cd scripts**
-
-    **test.bat**
   
 Directories goal 
 ----------------
@@ -117,4 +110,5 @@ Req are stored in Json file from python
 - json2xlsx.py + a list of requirements can get back for this
   list of requirements the covered req and the correspondings attributes
 
-more information in : doc/pyReq.pdf
+![graphic](doc/pyReq.svg)
+
