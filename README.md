@@ -2,8 +2,11 @@ pyReq management of requirements in python language
 ===================================================
 
 git clone https://github.com/jaepil/pdfminer3k.git
+
 git clone https://github.com/fcabaud/pyReq.git
+
 sudo pip3 install openpyxl
+
 cd pyReq 
 
 Purpose
