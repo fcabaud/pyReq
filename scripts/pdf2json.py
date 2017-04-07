@@ -9,6 +9,10 @@
 
 import json
 from pyReq import *
+import sys
+# pdfminer must be in ../..
+sys.path.append(os.path.join("..", "..", "pdfminer.six", "tools"))
+sys.path.append(os.path.join("..", "..", "pdfminer.six"))
 import pdf2txt
 import sys
 import re
