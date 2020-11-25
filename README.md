@@ -5,53 +5,44 @@ pyReq management of requirements in python language
 Purpose
 -------
 
-EXTRACTION of REQUIREMENTS from WORD DOCUMENTS
+EXTRACTION of REQUIREMENTS from PDF DOCUMENTS
 See examples after Installation and run demo chapter
 
-Installation and run demo 
--------------------------
+Doc
+-------
 
-1. Linux Ubuntu
+Req are stored in Json file from python
 
-    - git clone https://github.com/jaepil/pdfminer3k.git
+- pdf2json.py extract requirements from pdf to json
+
+- xlsx2json.py allows to write in Json file from xlsx (excel)
+  file a list of requirements + attribute and covered requirements
+
+- json2xlsx.py + a list of requirements can get back for this
+  list of requirements the covered req and the correspondings attributes
+
+![graphic](doc/pyReq.svg)
+
+
+Directories goal 
+----------------
+
+- in : input files (pdf), xlsx (input): your input(s)
+- out : result of an extraction : dont modify it
+- work: permanent requirements storage (like a database) in json format
+- scripts: python scripts (see doc in doc file)
+- doc: minimalist schema trying to explain how it works
+
+Installation and run demo on Linux Ubuntu 
+-----------------------------------------
 
     - git clone https://github.com/fcabaud/pyReq.git
 
-    - sudo pip3 install openpyxl
+    - cd pyReq
 
-    - cd pyReq 
+    - cd scripts
 
-2. Windows : NOT TESTED !!
-
-  - install pdfminer
-
-     - 2.x version is here
-
-    https://pypi.python.org/pypi/pdfminer/
-
-     - 3.x version is here
-
-    https://pypi.python.org/pypi/pdfminer3k
-
-    **c:\\python27\\python.exe setup.py install**
-
-  - install openpyxl
-
-    https://pypi.python.org/pypi/openpyxl  
-
-    **c:\\Python27\\python.exe  setup.py install**
-
-  - install setuptools
-
-   https://pypi.python.org/pypi/setuptools/
-
-   **c:\\Python27\\python.exe  setup.py install**
-
-  - enjoy !
-
-    **cd scripts**
-
-    **test.bat**
+    - pipenv shell 
 
 Examples
 -------
@@ -88,27 +79,5 @@ pyReq.py can be used for :
 
      will export a testlink csv file from docExample.json
   
-Directories goal 
-----------------
 
-- doc: minimalist schema trying to explain how it works
-- in : input files (pdf), xlsx (input): your input(s)
-- out : result of an extraction : dont modify it
-- work: permanent requirements storage (like a database) in json format
-- scripts: python scripts (see doc in doc file)
-
-Doc
--------
-
-Req are stored in Json file from python
-
-- pdf2json.py extract requirements from pdf to json
-
-- xlsx2json.py allows to write in Json file from xlsx (excel)
-  file a list of requirements + attribute and covered requirements
-
-- json2xlsx.py + a list of requirements can get back for this
-  list of requirements the covered req and the correspondings attributes
-
-![graphic](doc/pyReq.svg)
 

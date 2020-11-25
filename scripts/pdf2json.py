@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # Goal: from pdf file extract requirements and write them in json file
-#    1) pdf -> temporary file ../work/output.txt via pdf2txt module 
+#    1) pdf -> temporary file ../work/output.txt via pdftotext module 
 #    2) output.txt to json file via pyReq class
 #       - Input : pdfFileInput: pdf file
 #       - Input : regularExpression : 
@@ -10,10 +10,7 @@
 import json
 from pyReq import *
 import sys
-# pdfminer must be in ../..
-sys.path.append(os.path.join("..", "..", "pdfminer.six", "tools"))
-sys.path.append(os.path.join("..", "..", "pdfminer.six"))
-import pdf2txt
+import pdftotext
 import sys
 import re
 import argparse
@@ -32,7 +29,13 @@ def get_req_from_pdf(fileNameIn, regExp, fileNameOut):
      :type fileNameOut: string
   """
   print("Extract : %s"%fileNameIn)
-  pdf2txt.main(["-A", "-o", "../work/output.txt", fileNameIn])
+  # Load your PDF
+  with open(fileNameIn, "rb") as f:
+      pdf = pdftotext.PDF(f)
+  fp=open("../work/output.txt","w")
+  for one_line in pdf:
+    fp.write(one_line)
+  fp.close()
 
   # 1) Read input file
   fp=open("../work/output.txt","r")
