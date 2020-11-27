@@ -36,6 +36,13 @@ Directories goal
 Installation and run demo on Linux Ubuntu 
 -----------------------------------------
 
+
+    - sudo apt install python3.9
+
+    - sudo apt install libpython3.9-dev
+
+    - sudo apt-get install libpoppler-cpp-dev
+
     - git clone https://github.com/fcabaud/pyReq.git
 
     - cd pyReq
