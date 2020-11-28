@@ -86,5 +86,10 @@ pyReq.py can be used for :
 
      will export a testlink csv file from docExample.json
   
+   5. **Exporting requirements to redmine tool**
+
+     python3 ./json2redmine.py ../work/docExample.json ../out/testRedmine.csv
+
+     will export a redmine csv file from docExample.json
 
 
