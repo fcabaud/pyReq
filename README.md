@@ -92,4 +92,7 @@ pyReq.py can be used for :
 
      will export a redmine csv file from docExample.json
 
+License
+-------
 
+This project is licensed under the terms of the MIT license.
