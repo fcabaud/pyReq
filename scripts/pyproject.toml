@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pyreq"
+version = "0.1.0"
+description = "Requirements management"
+authors = ["Frédéric CABAUD <fcabaud@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openpyxl = "^3.0.10"
+pypdf2 = "^2.11.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

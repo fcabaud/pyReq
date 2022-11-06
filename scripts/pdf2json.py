@@ -10,7 +10,7 @@
 import json
 from pyReq import *
 import sys
-import pdftotext
+import PyPDF2
 import sys
 import re
 import argparse
@@ -29,12 +29,15 @@ def get_req_from_pdf(fileNameIn, regExp, fileNameOut):
      :type fileNameOut: string
   """
   print("Extract : %s"%fileNameIn)
-  # Load your PDF
-  with open(fileNameIn, "rb") as f:
-      pdf = pdftotext.PDF(f)
+
   fp=open("../work/output.txt","w")
-  for one_line in pdf:
-    fp.write(one_line)
+  reader = PyPDF2.PdfFileReader(fileNameIn)
+  #reader.isEncrypted  # is True
+  for item in range(reader.numPages):
+    text=reader.pages[item].extractText()
+    #print(text)
+    #print("next page")
+    fp.writelines(text)
   fp.close()
 
   # 1) Read input file

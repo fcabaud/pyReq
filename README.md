@@ -37,11 +37,7 @@ Installation and run demo on Linux Ubuntu
 -----------------------------------------
 
 
-    - sudo apt install python3.9
-
-    - sudo apt install libpython3.9-dev
-
-    - sudo apt-get install libpoppler-cpp-dev
+    - pip install poetry
 
     - git clone https://github.com/fcabaud/pyReq.git
 
@@ -49,7 +45,7 @@ Installation and run demo on Linux Ubuntu
 
     - cd scripts
 
-    - pipenv shell 
+    - poetry shell 
 
 Examples
 -------
