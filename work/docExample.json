@@ -1,97 +1,95 @@
 {
     "RQT_0001": {
-        "body": null, 
+        "body": "Test bla bla 1",
+        "document": "../in/docExample.pdf",
+        "coverage": [],
         "attribute": {
             "attributeSprint": 1
-        }, 
-        "document": null, 
-        "coverage": []
-    }, 
+        }
+    },
     "RQT_0002": {
-        "body": null, 
+        "body": "Test bla bla 2",
+        "document": "../in/docExample.pdf",
+        "coverage": [],
         "attribute": {
             "attributeSprint": 1
-        }, 
-        "document": null, 
-        "coverage": []
-    }, 
+        }
+    },
     "RQT_0003": {
-        "body": null, 
-        "attribute": {
-            "attributeSprint": 2
-        }, 
-        "document": null, 
-        "coverage": []
-    }, 
+        "body": ":Example of requirement : This is a long sentence is used on several lines on purpose for ",
+        "document": "../in/docExample.pdf",
+        "coverage": [],
+        "attribute": {}
+    },
     "RQT_0004": {
-        "body": ": please find another example of requirement : This is a sentence on several lines use with ", 
-        "attribute": {}, 
-        "document": "../in/docExample.pdf", 
-        "coverage": []
-    }, 
+        "body": ": please find another example of requirement : This is a sentence on several lines use with ",
+        "document": "../in/docExample.pdf",
+        "coverage": [],
+        "attribute": {}
+    },
     "RQT_0005": {
-        "body": ": Simple requirement. ", 
-        "attribute": {}, 
-        "document": "../in/docExample.pdf", 
-        "coverage": []
-    }, 
+        "body": ": Simple requirement. ",
+        "document": "../in/docExample.pdf",
+        "coverage": [],
+        "attribute": {}
+    },
     "RQT_0101": {
-        "body": ":Test relay status set at 5\u00b0.", 
-        "attribute": {}, 
-        "document": "../in/docExample2.pdf", 
+        "body": ":Test relay status set at 5\u00b0.",
+        "attribute": {},
+        "document": "../in/docExample2.pdf",
         "coverage": []
-    }, 
+    },
     "RQT_0102": {
-        "body": ": After 10\u00b0 the relay is reset.", 
-        "attribute": {}, 
-        "document": "../in/docExample2.pdf", 
+        "body": ": After 10\u00b0 the relay is reset.",
+        "attribute": {},
+        "document": "../in/docExample2.pdf",
         "coverage": []
-    }, 
+    },
     "RQT_0103": {
-        "body": ":Example of requirement : This is a long sentence is used on several lines on purpose use with ", 
-        "attribute": {}, 
-        "document": "../in/docExample2.pdf", 
+        "body": ":Example of requirement : This is a long sentence is used on several lines on purpose use with ",
+        "attribute": {},
+        "document": "../in/docExample2.pdf",
         "coverage": []
-    }, 
+    },
     "RQT_0104": {
-        "body": ": please find another example of requirement : This is a sentence on several lines use with ", 
-        "attribute": {}, 
-        "document": "../in/docExample2.pdf", 
+        "body": ": please find another example of requirement : This is a sentence on several lines use with ",
+        "attribute": {},
+        "document": "../in/docExample2.pdf",
         "coverage": []
-    }, 
+    },
     "TESTCASE1": {
-        "body": null, 
+        "body": null,
+        "document": null,
+        "coverage": [
+            "RQT_0001",
+            "RQT_0002"
+        ],
         "attribute": {
             "attributeStatus": "KO"
-        }, 
-        "document": null, 
-        "coverage": [
-            "RQT_0001", 
-            "RQT_0002"
-        ]
-    }, 
+        }
+    },
     "TESTCASE2": {
-        "body": null, 
-        "attribute": {}, 
-        "document": null, 
+        "body": null,
+        "document": null,
         "coverage": [
             "RQT_0004"
-        ]
-    }, 
+        ],
+        "attribute": {}
+    },
     "TESTCASE8": {
-        "body": null, 
-        "attribute": {
-            "attributeStatus": "OK"
-        }, 
-        "document": null, 
+        "body": null,
+        "document": null,
         "coverage": [
             "RQT_0005"
-        ]
-    }, 
+        ],
+        "attribute": {
+            "attributeStatus": "OK"
+        }
+    },
     "TESTCASE9": {
-        "body": null, 
-        "attribute": {}, 
-        "document": null, 
+        "body": null,
+        "attribute": {},
+        "document": null,
         "coverage": []
     }
 }

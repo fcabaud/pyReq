@@ -7,11 +7,8 @@
 #                    regular expression for requirements extraction
 #       - Output : jsonFileOutput : Json file containing requirements
 
-import json
-from pyReq import *
-import sys
-import PyPDF2
-import sys
+from pyReq import pyReq, C_PATH_IN, C_PATH_WORK
+from pypdf import PdfReader
 import re
 import argparse
 
@@ -31,10 +28,10 @@ def get_req_from_pdf(fileNameIn, regExp, fileNameOut):
   print("Extract : %s"%fileNameIn)
 
   fp=open("../work/output.txt","w")
-  reader = PyPDF2.PdfFileReader(fileNameIn)
+  reader = PdfReader(fileNameIn)
   #reader.isEncrypted  # is True
-  for item in range(reader.numPages):
-    text=reader.pages[item].extractText()
+  for item in range(len(reader.pages)):
+    text=reader.pages[item].extract_text()
     #print(text)
     #print("next page")
     fp.writelines(text)

@@ -1,18 +1,22 @@
+   
+page 1/1 
  
-
-page 1/1
-
-RQT_0101:Test relay status set at 5°.
-
-RQT_0102: After 10° the relay is reset.
-
-RQT_0103:Example of requirement : This is a long sentence is used on several lines on purpose use with 
-for pyReq Tool.
-
-RQT_0104: please find another example of requirement : This is a sentence on several lines use with 
-pyReq Tool.
-
-Note d’étude / Technical 
-document :   –  /    Edition 
-
-
+Requirements example
+ 
+ 
+RQT_0001:Below 10° the relay is set. 
+ 
+RQT_0002: After 10° the relay is reset. 
+ 
+RQT_0003:Example of requirement : This is a long sentence is used on several lines on purpose for 
+pyReq Tool. 
+ 
+ 
+RQT_0004: please find another example of requirement : This is a sentence on several lines use with 
+pyReq Tool. 
+ 
+RQT_0005: Simple requirement. 
+ 
+ 
+ 
+ 
